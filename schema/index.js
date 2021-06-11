@@ -3,8 +3,8 @@ const { importSchema, makeSchema } = require("faunadb-graphql-schema-loader");
 
 const schema = makeSchema([
   require("./UserSchema"),
-  require("./ChannelScema"),
-  require("./OrganizationScema"),
+  require("./ChannelSchema"),
+  require("./OrganizationSchema"),
 ]);
 
 importSchema(process.env.FAUNADB_SECRET, schema).then((res) =>
