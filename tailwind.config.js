@@ -7,7 +7,20 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+        "droid-serif": ["droid-serif", "serif"],
+      },
+      colors: {
+        cnavy: "#000447",
+        cblue: "#3458FF",
+        cwhite: "#F5F5F5",
+        cyellow: "#FFD135",
+        cblack: "#1c1c1c",
+        cgreen: "#059945",
+      },
+    },
   },
   variants: {
     extend: {},
