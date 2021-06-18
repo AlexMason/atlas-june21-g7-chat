@@ -20,6 +20,12 @@ module.exports = {
         cblack: "#1c1c1c",
         cgreen: "#059945",
       },
+      boxShadow: {
+        "orgcard-hover":
+          "0px 0px 16px -2px rgba(52,88,255,1), inset 0 0px 10px -2px rgba(0, 0, 0, 1)",
+        "orgcard-active": "0px 0px 10px 4px rgba(255,255,255,0.7)",
+        "orgcard-image": "inset 0 0px 10px -2px rgba(0, 0, 0, 1)",
+      },
     },
   },
   variants: {

@@ -19,7 +19,7 @@ export default function MainLayout({ children }) {
   );
 }
 
-const Layout = tw.div`flex flex-row h-full gap-2`;
+const Layout = tw.div`flex flex-row h-full`;
 const Meta = tw.div`flex flex-col bg-cnavy`;
 const Content = tw.div`flex-grow flex flex-col`;
 const Body = tw.div`flex-grow`;

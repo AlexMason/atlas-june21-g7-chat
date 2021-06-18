@@ -28,6 +28,21 @@ export default function StyleGuide() {
           reiciendis iste ab dicta?
         </p>
       </div>
+      <div className="container mx-auto font-droid-serif">
+        <h1>h1. This is a heading</h1>
+        <h2>h2. This is a heading</h2>
+        <h3>h3. This is a heading</h3>
+        <h4>h4. This is a heading</h4>
+        <h5>h5. This is a heading</h5>
+        <h6>h6. This is a heading</h6>
+
+        <p className="pt-10">
+          This is a paragraph. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Fuga quia quam facilis obcaecati nihil voluptatibus,
+          dolore sed id odio cum praesentium rem quibusdam nam animi asperiores
+          reiciendis iste ab dicta?
+        </p>
+      </div>
     </MainLayout>
   );
 }
