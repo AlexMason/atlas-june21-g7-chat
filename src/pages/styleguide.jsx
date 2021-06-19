@@ -1,6 +1,6 @@
 import tw from "tailwind-styled-components";
 import styled from "styled-components";
-import MainLayout from "./layouts/MainLayout";
+import MainLayout from "../layouts/MainLayout";
 
 export default function StyleGuide() {
   return (

@@ -4,7 +4,7 @@ import tw from "tailwind-styled-components";
 import styled from "styled-components";
 import { useState } from "react";
 
-export default function Navbar() {
+export default function OrgNavbar() {
   let tmpOrgs = ["efa", "google", "microsoft", "nestle", "netflix"];
   let [activeOrg, setActiveOrg] = useState(0);
 
@@ -45,7 +45,7 @@ const Org = ({ id, active }) => {
 };
 
 const OrgCard = tw.div`
-relative
+  relative
   bg-cblack
   w-14
   h-14
@@ -62,6 +62,5 @@ const ImgShadow = tw.div`
   top-0
   left-0
   cursor-pointer
-  ${(p) => !p.$active && "shadow-orgcard-image"}
-  ${(p) => !p.$active && "hover:shadow-orgcard-hover"}
+  ${(p) => !p.$active && "shadow-orgcard-image hover:shadow-orgcard-hover"}
 `;
