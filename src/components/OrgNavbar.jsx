@@ -13,7 +13,7 @@ export default function OrgNavbar() {
       <Orgs>
         {tmpOrgs.map((o, i) => {
           return (
-            <div onClick={() => setActiveOrg(i)}>
+            <div key={"org" + i} onClick={() => setActiveOrg(i)}>
               <Org id={o} active={i === activeOrg} />
             </div>
           );
@@ -62,5 +62,5 @@ const ImgShadow = tw.div`
   top-0
   left-0
   cursor-pointer
-  ${(p) => !p.$active && "shadow-orgcard-image hover:shadow-orgcard-hover"}
+  ${(p) => !p.$active && "shadow-inset-black hover:shadow-orgcard-hover"}
 `;
