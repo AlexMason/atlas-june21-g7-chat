@@ -1,15 +1,65 @@
 import tw from "tailwind-styled-components";
 import MainLayout from "../layouts/MainLayout";
-import { useState } from "react";
+import Chat from "../components/Chat";
+import { useState, useEffect } from "react";
 
-export default function Register() {
+export default function Org() {
   const PageWrapper = tw.div`flex h-full`;
-  const OrgMenuContainer = tw.div`bg-cblue px-2 pt-2`;
+  const OrgMenuContainer = tw.div`bg-coolgray-400 px-1 pt-2 md:px-2 lg:px-4 text-xs md:text-sm lg:text-base w-32 md:w-40 lg:w-52`;
   const ChatContainer = tw.div`flex flex-col flex-grow`;
   const ChannelList = tw.ul`flex flex-col gap-1`;
 
   let channels = ["announcements", "general", "help", "queue"];
   let [activeChannel, setActiveChannel] = useState(0);
+
+  // useEffect(() => {
+  //   //when component loads we need to grab all channels for org,
+  //   //and set active channel
+  // }, []);
+
+  // useEffect(() => {
+  //   //when active channel updates we need to fetch new messages and user info for those messages
+  // }, [activeChannel]);
+
+  let fakeUsers = [
+    { id: 0, displayName: "Alex" },
+    { id: 1, displayName: "Daniel" },
+    { id: 2, displayName: "Peter" },
+  ];
+
+  let fakeMessages = [
+    {
+      id: 0,
+      body: "This is a test message.",
+      timestamp: "",
+      user: fakeUsers[0],
+    },
+    {
+      id: 1,
+      body: "This is a response to a test message.",
+      user: fakeUsers[1],
+    },
+    {
+      id: 2,
+      body: "Hi I am another message from another user",
+      user: fakeUsers[2],
+    },
+  ];
+
+  fakeMessages = [
+    ...fakeMessages,
+    ...fakeMessages,
+    ...fakeMessages,
+    ...fakeMessages,
+    ...fakeMessages,
+    ...fakeMessages,
+    ...fakeMessages,
+    ...fakeMessages,
+    ...fakeMessages,
+    ...fakeMessages,
+    ...fakeMessages,
+    ...fakeMessages,
+  ];
 
   return (
     <MainLayout>
@@ -30,13 +80,7 @@ export default function Register() {
           </ChannelList>
         </OrgMenuContainer>
 
-        {/* Channel Container */}
-        <ChatContainer>
-          {/* Channel Messages */}
-          <ChatMessages />
-          {/* Channel Message Input */}
-          <ChatInput />
-        </ChatContainer>
+        <Chat messages={fakeMessages} />
       </PageWrapper>
     </MainLayout>
   );
@@ -45,8 +89,8 @@ export default function Register() {
 const Channel = ({ name, active = false, onClick }) => {
   const ChannelListItem = tw.li`${(p) =>
     p.$active
-      ? "bg-cyellow hover:bg-cyellow-dark font-medium text-cnavy"
-      : "hover:bg-cyellow-light text-cwhite hover:text-cnavy"} p-1 px-2 rounded cursor-pointer `;
+      ? "bg-cnavy-dark hover:bg-cyellow hover:text-black text-cwhite"
+      : "text-cblack hover:text-cnavy border-2 border-cyellow border-opacity-0 hover:border-opacity-100"} truncate font-medium p-1 px-2 rounded cursor-pointer `;
   // const ChannelListItem = tw.li`${(p) =>
   //   p.$active
   //     ? "bg-cnavy hover:bg-cnavy-dark font-medium"
@@ -56,26 +100,5 @@ const Channel = ({ name, active = false, onClick }) => {
     <ChannelListItem onClick={() => onClick()} $active={active}>
       #{name}
     </ChannelListItem>
-  );
-};
-
-const ChatMessages = ({}) => {
-  return (
-    <div className="flex-grow bg-blue-200 shadow-inset-black">
-      Chat messages go here
-    </div>
-  );
-};
-
-const ChatInput = ({}) => {
-  const InputWrapper = tw.div`bg-cblue flex p-2 gap-2`;
-  const Input = tw.input`flex-grow`;
-  const Button = tw.button`bg-coolgray-800 hover:bg-coolgray-900 text-cwhite p-2 rounded`;
-
-  return (
-    <InputWrapper>
-      <Input type="text" />
-      <Button>Send</Button>
-    </InputWrapper>
   );
 };

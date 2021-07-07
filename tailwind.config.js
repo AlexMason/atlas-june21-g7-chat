@@ -10,6 +10,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      outline: {
+        cblue: ["2px solid #3458FF"],
+      },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
         "droid-serif": ["droid-serif", "serif"],
@@ -18,7 +21,7 @@ module.exports = {
         cnavy: {
           light: "#00077a",
           DEFAULT: "#000447",
-          dark: "#00032e",
+          dark: "#000223",
         },
         cblue: {
           light: "#6681ff",
@@ -39,7 +42,8 @@ module.exports = {
         "orgcard-hover":
           "0px 0px 16px -2px rgba(52,88,255,1), inset 0 0px 10px -2px rgba(0, 0, 0, 1)",
         "orgcard-active": "0px 0px 10px 4px rgba(255,255,255,0.7)",
-        "inset-black": "inset 0 0px 10px -2px rgba(0, 0, 0, 1)",
+        "inset-black": "inset 0 0px 6px -2px rgba(0, 0, 0, 1)",
+        right: "0px 0px 8px -2px rgba(0, 0, 0, 1)",
       },
     },
   },

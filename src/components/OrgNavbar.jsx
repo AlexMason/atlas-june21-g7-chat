@@ -5,6 +5,9 @@ import styled from "styled-components";
 import { useState } from "react";
 
 export default function OrgNavbar() {
+  const NavbarWrapper = tw.div`h-full text-cwhite`;
+  const Orgs = tw.div`flex flex-col p-3 md:p-4 lg:p-6 gap-6 justify-center items-center`;
+
   let tmpOrgs = ["efa", "google", "microsoft", "nestle", "netflix"];
   let [activeOrg, setActiveOrg] = useState(0);
 
@@ -13,9 +16,12 @@ export default function OrgNavbar() {
       <Orgs>
         {tmpOrgs.map((o, i) => {
           return (
-            <div key={"org" + i} onClick={() => setActiveOrg(i)}>
-              <Org id={o} active={i === activeOrg} />
-            </div>
+            <Org
+              key={"org" + i}
+              id={o}
+              active={i === activeOrg}
+              onClick={() => setActiveOrg(i)}
+            />
           );
         })}
       </Orgs>
@@ -23,44 +29,40 @@ export default function OrgNavbar() {
   );
 }
 
-const NavbarWrapper = tw.div`
-  h-full
-  text-cwhite
-`;
+const Org = ({ id, active, onClick }) => {
+  const OrgCard = tw.div`
+    ${(p) => p.$active && "shadow-orgcard-active"}
+    relative
+    bg-cblack
+    w-10 h-10
+    md:w-14 md:h-14
+    lg:w-20 lg:h-20
+    rounded-lg
+  `;
 
-const Orgs = tw.div`flex flex-col mt-4 gap-6 mx-2`;
+  const ImgShadow = tw.div`
+    ${(p) => !p.$active && "shadow-inset-black hover:shadow-orgcard-hover"}
+    absolute
+    w-full
+    h-full
+    rounded-lg
+    top-0
+    left-0
+    cursor-pointer
+    z-50
+  `;
 
-const Org = ({ id, active }) => {
+  function test() {}
+
   return (
-    <OrgCard $active={active}>
+    <OrgCard $active={active} onHover={test} onClick={() => onClick()}>
       <Image
-        className="rounded-lg shadow-orgcard-image"
+        className="rounded-lg"
         src={`/orgs/${id}.png`}
-        width="100%"
         height="100%"
+        width="100%"
       />
       <ImgShadow $active={active} />
     </OrgCard>
   );
 };
-
-const OrgCard = tw.div`
-  relative
-  bg-cblack
-  w-14
-  h-14
-  mx-2
-  rounded-lg
-  ${(p) => p.$active && "shadow-orgcard-active"}
-`;
-
-const ImgShadow = tw.div`
-  absolute
-  w-full
-  h-full
-  rounded-lg
-  top-0
-  left-0
-  cursor-pointer
-  ${(p) => !p.$active && "shadow-inset-black hover:shadow-orgcard-hover"}
-`;

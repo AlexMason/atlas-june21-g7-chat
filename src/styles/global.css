@@ -4,6 +4,7 @@
 #__next,
 html,
 body {
-  height: 100%;
+  height: 100vh;
   font-family: "montserrat", sans-serif;
+  overflow-y: hidden;
 }

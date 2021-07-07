@@ -1,15 +1,19 @@
-import Head from "next/head";
 import tw from "tailwind-styled-components";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 import Header from "../components/Header";
 import OrgNavbar from "../components/OrgNavbar";
+import Head from "next/head";
 
 export default function MainLayout({ children }) {
   return (
     <Layout>
-      <Meta className="flex flex-col bg-cnavy">
+      <Head>
+        <title>Chat App</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <Meta>
         <OrgNavbar />
-        <Footer />
+        {/* <Footer /> */}
       </Meta>
       <Content>
         <Header />
@@ -19,7 +23,7 @@ export default function MainLayout({ children }) {
   );
 }
 
-const Layout = tw.div`flex flex-row h-full`;
-const Meta = tw.div`flex flex-col bg-cnavy`;
-const Content = tw.div`flex-grow flex flex-col`;
+const Layout = tw.div`flex flex-row h-screen`;
+const Meta = tw.div`flex flex-col bg-cnavy-dark border-r-1 border-coolgray-400 shadow-right z-10`;
+const Content = tw.div`flex-grow flex flex-col h-screen`;
 const Body = tw.div`flex-grow bg-cwhite`;
