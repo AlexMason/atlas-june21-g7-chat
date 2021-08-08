@@ -1,6 +1,6 @@
 import tw from "tailwind-styled-components";
 // import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Header from "../../modules/team/components/TeamHeader";
 import OrgNavbar from "../components/OrgNavbar";
 import Head from "next/head";
 

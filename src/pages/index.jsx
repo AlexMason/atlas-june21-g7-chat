@@ -25,7 +25,7 @@ export default function Home() {
       </Hero>
       <div className="container mx-auto z-10">
         <p className="text-center text-cblack w-7/12 mx-auto text-2xl pt-10 font-medium">
-          We built a better chat experience, leveraging your businesses
+          We built a better chat experience. Leveraging your business's
           communication channels has never been easier.
         </p>
         <Info>
@@ -55,29 +55,38 @@ export default function Home() {
           </InfoCard>
         </Info>
       </div>
-      <div className="bg-[#6c963f] pt-20 pb-20 text-cwhite -mt-5">
+      <CommSection>
         <div className="container mx-auto">
           <h1 className="w-2/3 mx-auto text-3xl font-bold uppercase text-center">
             Empowering your communications
           </h1>
-          <p className="w-2/3 mx-auto text-lg mt-5 text-center">
-            Inclusivity in diversification has never been this simple. When you
-            allow junto to help you wrangle your communication channels between
-            teams, the benefits gained are measurable in productivity.
+          <p className="w-9/12 mx-auto text-lg mt-5 text-center">
+            A team is only as strong as its communication. Junto was developed
+            to provide inclusive, accessible, and equitable communication to
+            your teammates. Empower your communication and watch your
+            productivity take off.
           </p>
-          <div className="flex flex-col items-center pt-5">
+          <div className="flex flex-col items-center pt-10">
             <button className="border-2 text-xl p-2 rounded-lg">
               Get Started
             </button>
           </div>
         </div>
-      </div>
+      </CommSection>
       <div className="bg-[#3d3f42] p-10 text-cwhite">
         <p>&copy; Junto 2021</p>
       </div>
     </div>
   );
 }
+
+const CommSectionCSS = styled.div`
+  border-top-left-radius: 20% 10%;
+  border-top-right-radius: 20% 10%;
+`;
+const CommSection = tw(
+  CommSectionCSS
+)`bg-[#46602a] pt-20 pb-20 text-cwhite -mt-5`;
 
 const HeroCSS = styled.div`
   border-bottom-left-radius: 50% 30%;
@@ -96,6 +105,7 @@ const HeroLearnMore = tw.div`underline text-xs pt-5`;
 
 const Info = tw.div`flex justify-center pt-10 gap-10 w-3/4 mx-auto`;
 const InfoCard = tw.div`text-cblack
+  rounded
   bg-cwhite
   font-medium
   text-5xl w-4/12 flex flex-col items-center p-3 shadow-2xl py-10

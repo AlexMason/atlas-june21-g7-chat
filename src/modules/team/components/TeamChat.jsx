@@ -29,14 +29,14 @@ const ChatInput = () => {
 const ChatMessages = ({ messages }) => {
   let activeUserId = 1;
   const Messages = tw.div`rounded bg-cwhite
-      flex-grow block justify-end 
+      flex-grow block 
       shadow-inset-black mt-2 mr-2 p-2
-      overflow-y-scroll min-h-0 h-0
+      overflow-y-scroll min-h-0 h-0 
     `;
   const Message = tw.div`
     ${(p) => (p.$owned ? "ml-auto" : "")}
     flex flex-col max-w-max
-    bg-coolgray-300 m-2 py-1 px-2 rounded
+    bg-coolgray-300 m-2 py-1 px-2 rounded w-9/12
   `;
   const MessageBody = tw.div`text-sm`;
   const MessageMeta = tw.div`self-end text-xs text-cblack text-opacity-60`;

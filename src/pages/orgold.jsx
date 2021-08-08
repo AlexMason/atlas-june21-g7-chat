@@ -1,6 +1,6 @@
 import tw from "tailwind-styled-components";
-import MainLayout from "../layouts/MainLayout";
-import Chat from "../components/Chat";
+import MainLayout from "../common/layouts/MainLayout";
+import Chat from "../modules/team/components/TeamChat";
 import { useState, useEffect } from "react";
 
 export default function Org() {
@@ -23,43 +23,34 @@ export default function Org() {
 
   let fakeUsers = [
     { id: 0, displayName: "Alex" },
-    { id: 1, displayName: "Daniel" },
-    { id: 2, displayName: "Peter" },
+    { id: 1, displayName: "Melissa" },
+    { id: 2, displayName: "Josh" },
   ];
 
   let fakeMessages = [
     {
       id: 0,
-      body: "This is a test message.",
-      timestamp: "",
+      body: "Hey do you think you can get me over those forms today Melissa?",
       user: fakeUsers[0],
     },
     {
       id: 1,
-      body: "This is a response to a test message.",
+      body: "Sure thing Alex, I am in a meeting until 1PM.  Will send them over your way after!",
       user: fakeUsers[1],
     },
     {
       id: 2,
-      body: "Hi I am another message from another user",
+      body: "Hi @Alex, Accounting need a copy of those once you get them processed.",
       user: fakeUsers[2],
+    },
+    {
+      id: 3,
+      body: "You got it josh!",
+      user: fakeUsers[0],
     },
   ];
 
-  fakeMessages = [
-    ...fakeMessages,
-    ...fakeMessages,
-    ...fakeMessages,
-    ...fakeMessages,
-    ...fakeMessages,
-    ...fakeMessages,
-    ...fakeMessages,
-    ...fakeMessages,
-    ...fakeMessages,
-    ...fakeMessages,
-    ...fakeMessages,
-    ...fakeMessages,
-  ];
+  fakeMessages = [...fakeMessages];
 
   return (
     <MainLayout>
